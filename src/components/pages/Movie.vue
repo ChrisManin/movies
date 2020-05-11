@@ -8,6 +8,8 @@
       <div class="col-sm-8">
         <p>{{ movie.year }} - {{ movie.rating }}%</p>
         <p>{{ movie.resume }}</p>
+
+        <p><Like /></p>
         <p><b-button to="/" variant="primary">Retour</b-button></p>
       </div>
     </div>
@@ -16,8 +18,12 @@
 
 <script>
 import moviesDB from "@/movies.db";
+import Like from "@/components/Like";
 
 export default {
+  components: {
+    Like,
+  },
   data() {
     return {
       movie: null,
