@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import moviesDB from "@/movies.db";
 import Like from "@/components/Like";
 
 export default {
@@ -29,9 +28,10 @@ export default {
       movie: null,
     };
   },
-  mounted() {
+  created() {
+    const movies = this.$store.state.movies;
     const slug = this.$route.params.slug;
-    this.movie = moviesDB.find((movie) => movie.slug === slug);
+    this.movie = movies.find((movie) => movie.slug === slug);
   }
 };
 </script>

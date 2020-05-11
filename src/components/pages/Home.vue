@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import movieDB from "@/movies.db";
 import MovieItem from "@/components/MovieItem";
 
 export default {
@@ -19,7 +18,7 @@ export default {
   },
   data() {
     return {
-      movies: movieDB
+      movies: this.$store.state.movies,
     };
   }
 };
