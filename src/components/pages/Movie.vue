@@ -1,12 +1,33 @@
 <template>
   <div>
-    <h1>Film</h1>
+    <h1>{{ movie.name }}</h1>
+    <div class="row">
+      <div class="col-sm-4">
+        <img :src="movie.image" :alt="'poster' + movie.name" class="img-fluid">
+      </div>
+      <div class="col-sm-8">
+        <p>{{ movie.year }} - {{ movie.rating }}%</p>
+        <p>{{ movie.resume }}</p>
+        <p><b-button to="/" variant="primary">Retour</b-button></p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import moviesDB from "@/movies.db";
 
-export default {};
+export default {
+  data() {
+    return {
+      movie: null,
+    };
+  },
+  mounted() {
+    const slug = this.$route.params.slug;
+    this.movie = moviesDB.find((movie) => movie.slug === slug);
+  }
+};
 </script>
 
 <style lang="scss" scoped></style>
