@@ -38,16 +38,27 @@
 
 <script>
 export default {
+    props: {
+        movie: {
+            type: Object,
+            default: null,
+        },
+    },
   data() {
     return {
       isLiked: false
     };
   },
+  mounted () {
+      this.isLiked = this.movie.liked;
+  },
   methods: {
     toggleLiked() {
       this.isLiked = !this.isLiked;
-    }
-  }
+      this.movie.liked = this.isLiked;
+      this.$store.dispatch("updateMovie", this.movie);
+    },
+  },
 };
 </script>
 

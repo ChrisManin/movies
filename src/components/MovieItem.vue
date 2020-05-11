@@ -4,7 +4,7 @@
       <b-card-text>
         <h2>{{ movie.name }}</h2>
         <b-button :to="'/movie/' + movie.slug" variant="primary">Plus d'infos</b-button>
-        <Like />
+        <Like :movie="movie" />
       </b-card-text>
     </b-card>
   </div>

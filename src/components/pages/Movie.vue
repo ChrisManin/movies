@@ -9,7 +9,7 @@
         <p>{{ movie.year }} - {{ movie.rating }}%</p>
         <p>{{ movie.resume }}</p>
 
-        <p><Like /></p>
+        <p><Like :movie="movie" /></p>
         <p><b-button to="/" variant="primary">Retour</b-button></p>
       </div>
     </div>
