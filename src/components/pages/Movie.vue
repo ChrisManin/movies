@@ -29,7 +29,7 @@ export default {
     };
   },
   created() {
-    const movies = this.$store.state.movies;
+    const movies = this.$store.state.movies.movies;
     const slug = this.$route.params.slug;
     this.movie = movies.find((movie) => movie.slug === slug);
   }
