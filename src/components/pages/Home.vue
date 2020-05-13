@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      movies: this.$store.state.movies,
+      movies: this.$store.state.movies.movies,
     };
   }
 };

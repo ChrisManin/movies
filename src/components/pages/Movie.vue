@@ -29,9 +29,8 @@ export default {
     };
   },
   created() {
-    const movies = this.$store.state.movies;
     const slug = this.$route.params.slug;
-    this.movie = movies.find((movie) => movie.slug === slug);
+    this.movie = this.$store.getters.getMovie(slug);
   }
 };
 </script>
